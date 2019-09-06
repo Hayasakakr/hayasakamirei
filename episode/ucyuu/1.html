@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href='episode/ucyuu/pex.css' media="all">
-    <script src='episode/ucyuu/jquery-1.9.1.min.js'></script>
-    <script src='episode/ucyuu/pex-1.2.0.j'></script>
-    <script src='episode/ucyuu/pex_common.js'></script>
+    <link rel="stylesheet" href='../../episode/ucyuu/pex.css' media="all">
+    <script src='../../episode/ucyuu/jquery-1.9.1.min.js'></script>
+    <script src='../../episode/ucyuu/pex-1.2.0.js'></script>
+    <script src='../../episode/ucyuu/pex_common.js'></script>
     <script>
         $(document).ready(function() {
             if (typeof newrelic === 'object' && typeof newrelic.setPageViewName === 'function') {
@@ -25,6 +25,7 @@
         #container {
             position: relative;
         }
+
         #voiceTouch {
             display: block;
             position: absolute;
@@ -35,16 +36,19 @@
             height: 150%;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
+
         .switchBt {
             display: block;
             position: absolute;
             z-index: 200;
         }
+
         .selectSwitchBt {
             display: block;
             position: absolute;
             z-index: 210;
         }
+
         .scrollBt {
             display: block;
             position: absolute;
@@ -66,6 +70,7 @@
         var width = 240 * displayScaleValue * 2;
         marginLeft = widthMarginCheck(displayScaleValue);
         marginTop = topMarginCheck(displayScaleValue);
+
         function setScrollTop() {
             if (document.documentElement) {
                 document.documentElement.scrollTop = 0;
@@ -76,6 +81,7 @@
         }
         window.addEventListener("DOMContentLoaded", function() {
             no_scroll();
+
             function no_scroll() {
                 var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
                 document.addEventListener(scroll_event, function(e) {
@@ -140,7 +146,7 @@
             container.style.marginTop = (marginTop) + "px";
             container.style.zoom = "50%";
             container.style.height = (window.outerHeight * 2 - marginTop) + "px";
-            var pex = new Pex('episode/ucyuu/ucyuu1.swf', "container", option);
+            var pex = new Pex('ucyuu1.swf', "container", option);
             pex.getAPI().ready(function() {
                 setScrollTop();
             });
@@ -177,12 +183,15 @@
             })(jQuery);
             timerId = setTimeout("isFlash()", 60000);
         };
+
         function touchHandler(event) {
             event.preventDefault();
         };
+
         function redirect() {
             location.href = "http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fgame_error%3Fl_frm%3DSmart_phone_flash_convert_1%26rnd%3D172885975";
         };
+
         function isFlash() {
             var container = document.getElementById("container");
             var children = container.childNodes;
@@ -192,6 +201,7 @@
                 clearTimeout(timerId);
             }
         };
+
         function scaleSizeCheck() {
             window.scrollTo(0, 1);
             myW = window.innerWidth;
@@ -205,6 +215,7 @@
             }
             return myS;
         };
+
         function widthMarginCheck(scale) {
             if (scale < 0) {
                 return 0;
@@ -219,6 +230,7 @@
             }
             return marginL * 2;
         }
+
         function topMarginCheck(scale) {
             if (scale < 0) {
                 return 0;
@@ -233,6 +245,7 @@
             }
             return marginT * 2;
         }
+
         function getFlashPlayerVersion() {
             var vsn = '';
             if (navigator.plugins["Shockwave Flash"] && navigator.mimeTypes.length) {
@@ -247,7 +260,9 @@
             return vsn;
         }
         var skipNextUrl;
+
         function skipBtnGenerate(url) {}
+
         function SkipBtnDown(e) {
             var scale = scaleSizeCheck();
             var width_margin = widthMarginCheck(scale);
@@ -266,6 +281,7 @@
                 document.location = skipNextUrl;
             }
         }
+
         function call_select_item(play_scene, select_num) {
             var use_item, max_use_flag;
             switch (select_num) {
@@ -289,6 +305,7 @@
                     break;
             }
         }
+
         function nextJump(url) {
             location.href = url;
         }
@@ -299,8 +316,8 @@
             chrome_app_flg = 0,
             chrome_app_extension_id = 'dnacabmnfmejgfffmcehejcmiciinpej';
     </script>
-    <script type='text/javascript' src='episode/ucyuu/app_sound.js'></script>
-    <link rel="stylesheet" type="text/css" href="episode/ucyuu/base.css" />
+    <script type='text/javascript' src='../../episode/ucyuu/app_sound.js'></script>
+    <link rel="stylesheet" type="text/css" href="../../episode/ucyuu/base.css" />
 </head>
 
 <body style="height:100%">
@@ -311,8 +328,8 @@
         white_flag = 0;
         vote_simple_swf_flg = 0;
     </script>
-    <script src="episode/ucyuu/boombox.min.js"></script>
-    <script src="episode/ucyuu/GeneVoice.js"></script>
+    <script src="../../episode/ucyuu/boombox.min.js"></script>
+    <script src="../../episode/ucyuu/GeneVoice.js"></script>
     <div id="mbga-pf-footer">
         <div class="mbga-pf-footer-container odd-lines mbga-pf-footer-white">
             <ul>
