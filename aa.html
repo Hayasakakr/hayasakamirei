@@ -1,11 +1,12 @@
-<!doctype html>
 <html lang="ko" xml:lang="ko">
+
 <!--신 카드 추가시 해야할 것 -->
 <!--1. idolList에 추가 + 넘기는 페이지 추가되면 추가로 넣기-->
 <!--2. 앨범 등록, 친애도 맥스 수 수정 (register 검색)-->
 <!--3. 생일 연출 추가 -->
 <!--4. 대사 추가 -->
 <!--5. 일러 저장 및 주소 추가 -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="pragma" content="no-cache">
@@ -36,54 +37,13 @@
         }
     </script>
     <script src="js/Fjquery-2.2.2.min.js"></script>
-    <script>
-        (function() {
-            window.viewer_id = 158671539;
-            var _url = "http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fgame_error%2Freport_js_error%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D197298837";
-            var _path = location.href;
-            var _spec_obj;
-            var _spec = 'none';
-            var version = 1;
-            // access方法検出
-            _spec_obj = {
-                'isNative': false,
-                'isAndApp': false,
-                'isShellApp': false,
-                'isIosApp': false,
-                'isChromeApp': false
-            };
-            if (_spec.isAndApp) {
-                _spec = 'andapp'
-            } else if (_spec.isIosApp) {
-                _spec = 'iosApp';
-            } else if (_spec.isShellApp) {
-                _spec = 'shellapp';
-            } else {
-                _spec = 'browser?';
-            }
-            var _ua = window.navigator.userAgent.toLowerCase();
-            window.onerror = function(msg, file, line, col, error) {
-                $.ajax({
-                    url: _url,
-                    type: 'post',
-                    data: {
-                        'ua': _ua,
-                        'viewer_id': window.viewer_id,
-                        'path': _path,
-                        'line': line,
-                        'column': col,
-                        'error': error,
-                        'spec': _spec,
-                        'spec_obj': _spec_obj,
-                        'version': version
-                    }
-                })
-            };
-        })();
-    </script>
-    <script src="js/Funderscore-min.js"></script>
-    <script src="js/Frequire.js"></script>
-    <script src="js/Frequire.js"></script>
+    <script src="../../../12008305/js/underscore-min.js"></script>
+    <script src="../../../12008305/js/require.js"></script>
+ 
+    <link rel="stylesheet" type="text/css" href="../../../12008305/css/rich/memory.css" media="all"> <!--이벤트 메모리-->
+    <link rel="stylesheet" type="text/css" href="../../../12008305/css/rich/event_carnival.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../../12008305/css/rich/theater.css" media="all"> <!--극장-->
+    <link rel="stylesheet" type="text/css" href="../../../12008305/css/rich/valentine.css" media="all"> <!--발렌타인-->
     <script>
         requirejs.config({
             paths: {
@@ -119,119 +79,58 @@
 </head>
 
 <body id="idol_gallery" class="idol_detail">
+  <script type="text/javascript"> // 파라미터 가져오기 , 프로듀서 이름 설정
+      function getParameterByName(name) {
+          name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+          var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+              results = regex.exec(location.search);
+              return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+      var producer = getParameterByName('pro') + " ";
+      var firstIndex = getParameterByName('index') + "";
+      var firstSlide = getParameterByName('slide') + "";
+ 
+      if(producer == " ")
+      {
+        producer = "○○○"
+      }
+ 
+      if(firstIndex == "")
+      {
+        firstIndex = "0"
+      }
+ 
+      if(firstIndex == "")
+      {
+        firstIndex = "0"
+      }
+ 
+ 
+  </script>
     <div id="top" class="page_container jsOnBtn">
         <nav class="area_menu_header">
             <div class="area_menu_header_6btn">
                 <h1 id="JtextLimit">아이돌 갤러리</h1>
                 <ul>
-                    <li><a class="head_menu_01" href="http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fmypage%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D528839319">
+                    <li><a class="head_menu_01" href="">
                             <div></div>
                         </a></li>
-                    <li><a class="head_menu_02" href="http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fpetit_cg%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D634043978">
+                    <li><a class="head_menu_02" href="">
                             <div></div>
                         </a></li>
-                    <li><a class="head_menu_03" href="http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fgacha%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D740400632">
+                    <li><a class="head_menu_03" href="">
                             <div></div>
                         </a></li>
-                    <li><a class="head_menu_04" href="http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fcard_str%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D282868050">
+                    <li><a class="head_menu_04" href="">
                             <div></div>
                         </a></li>
-                    <li><a class="head_menu_05" href="http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fauction%2Fauction_top%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D857205616">
+                    <li><a class="head_menu_05" href="">
                             <div></div>
                         </a></li>
                     <li><a class="head_menu_06 se_000" href="#" id="headerAcd">
                             <div></div>
                         </a></li>
                 </ul>
-            </div>
-            <div id="headerPopupMenu" class="headerPopupMenu">
-                <div class="m-Top10 t-Cnt">
-                    <a href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fevent_produce%2Findex%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D258311443' class="jsOnDesignBtn"><img src='http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fimage_sp%2Fevent%2F1722%2Fbanner_event_01.png%3Fv%3D20190830190050' width="280" height="60"></a>
-                </div>
-                <div class="area_menu_header_main4">
-                    <ul>
-                        <li><a class="btn_menu_header_lesson" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fcard_str%3Fl_frm%3DIdol_gallery_idol_detail_2%26rnd%3D64695670'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_work" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fquests%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D819900180'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_livebattle" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fbattles%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D210476265'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_deck" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fdeck%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D319828779'>
-                                <div></div>
-                            </a></li>
-                    </ul>
-                </div>
-                <h3 class="icon_menu_header_01"></h3>
-                <div class="area_menu_header_4">
-                    <ul>
-                        <li><a class="btn_menu_header_shop" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fshop%2Findex%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D214227357'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_item" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fitem%2Findex%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D213646985'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_present" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fpresent%2Frecieve%2F%3Fview_auth_type%3D1%26cache%3D1%26l_frm%3DIdol_gallery_idol_detail_1%26rnd%3D899005070'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_change" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fexchange%2Fmedal_list%2F999999%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D253651205'>
-                                <div></div>
-                            </a></li>
-                    </ul>
-                </div>
-                <h3 class="icon_menu_header_02"></h3>
-                <div class="area_menu_header_5">
-                    <ul>
-                        <li><a class="btn_menu_header_idollist" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fcard_list%2Findex%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D278542706'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_trainer" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fcard_storage%2Findex%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D495985968'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_production" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fknights%2Fnot_join_knights_top%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D795448465'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_pra" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fp_ranking_award%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D352571403'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_profile" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fresults%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D715076327'>
-                                <div></div>
-                            </a></li>
-                    </ul>
-                </div>
-                <h3 class="icon_menu_header_03"></h3>
-                <div class="area_menu_header_4">
-                    <ul>
-                        <li><a class="btn_menu_header_favorite" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Ffriend%2Findex%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D404525744'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_memory" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fmemorial%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D520291892'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_gamecenter" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fgame_center%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D629305836'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_sound" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fs_booth%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D757403225'>
-                                <div></div>
-                            </a></li>
-                    </ul>
-                </div>
-                <h3 class="icon_menu_header_04"></h3>
-                <div class="area_menu_header_3">
-                    <ul>
-                        <li><a class="btn_menu_header_setting" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fpersonal_option%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D680947375'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_help" href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fadvise%2Findex%2Ftop%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D186354809'>
-                                <div></div>
-                            </a></li>
-                        <li><a class="btn_menu_header_top" href='http://sp.pf.mbga.jp/12008305/?guid=ON'>
-                                <div></div>
-                            </a></li>
-                    </ul>
-                </div>
             </div>
         </nav>
         <input id="delay" type="hidden" value="0">
@@ -356,6 +255,7 @@
             <div class="displayBox" style="-webkit-box-pack:center;width:300px;">
                 <div style="width:50%">
                     <a class="btn_3rd_anniversary js_submit_check_idol_comment_3rd m-Top10 t-Cnt jsOnDesignBtn"></a>
+                    <!--ㅡmethod를 get으로-->
                     <form method="post" action='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fcampaign%2Fcheck_idol_comment%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D270806650' class="form_check_idol_comment_3rd" style="display:none;">
                         <input type="hidden" name="character_id" value="62">
                         <input type="hidden" name="select_card_hash" value="">
@@ -368,6 +268,7 @@
                         <input type="hidden" name="redirect_url" value="">
                         <input type="hidden" name="campaign_id" value="114">
                         <input type="hidden" name="chapter_id" value="1">
+                    <!--ㅡmethod를 get으로-->
                     </form>
                 </div>
             </div>
@@ -408,10 +309,35 @@
             }
             -->
         </style>
+        <!--탭 테스트-->
+        <script type="text/javascript">
+            $(function() {
+                $('#jsAreaSwitchBtn').on('click', function() {
+                    $("[id^='area_tab_']").hide();
+                    $("[id^='area_title_']").hide();
+                    $('#area_tab_' + $('#js_area_switch').val()).show();
+                    $('#area_title_' + $('#js_area_switch').val()).show();
+                    return false;
+                }).trigger("click");
+            });
+        </script>
+        <script src="../../../12008305/js/ilibrary.js" type="text/javascript"></script>
+ 
+        <script type="text/javascript">
+            $('#story_collection_tab_sub').tab_switch({
+                contents: ".area_tab",
+                start: 1 + 0
+            });
+            $('#story_collection_tab').tab_switch({
+                tabs: "[class^='tab_line_']",
+                contents: ".area_story_collection_tab",
+                start: 0
+            });
+        </script>
         <script type="text/template" id="tab-4-template">
             <div id="contents_tab" class="tab_common-large m-Top4 m-Btm8" style="font-size:11px">
 <a name="tab_1" href="#" class="tab_line_4 tab_text selected" style="font-size:11px;">프로필</a>
-<a name="tab_2" href="#" class="tab_line_4 tab_text js_tab_comment_list" style="font-size:11px;">대사 보기</a>
+<a name="tab_2" href="#" class="tab_line_4 tab_text js_tab_comment_list" style="font-size:11px;">대사 일람</a>
 <a name="tab_3" href="#" class="tab_line_4 tab_text" style="font-size:11px;">에피소드</a>
 <a name="tab_4" href="#" class="tab_line_4 tab_text" style="font-size:11px;">아이돌 정보</a>
 </div>
@@ -419,7 +345,7 @@
         <script type="text/template" id="tab-3-template">
             <div id="contents_tab" class="tab_common-large m-Top4 m-Btm8">
 <a name="tab_1" class="tab_line_3 tab_text" href="#">프로필</a>
-<a name="tab_2" class="tab_line_3 tab_text js_tab_comment_list" href="#">대사 보기</a>
+<a name="tab_2" class="tab_line_3 tab_text js_tab_comment_list" href="#">대사 일람</a>
 <a name="tab_3" href="#" style='display:none;'>에피소드</a>
 <a name="tab_4" class="tab_line_3 tab_text" href="#">아이돌 정보</a>
 </div>
@@ -567,212 +493,191 @@ kg
 <% }); %>
 </div>
 </script>
----------------------------------------------------------------------------------------
         <script type="text/template" id="story-template">
             <% for(var i = paging_info.current_page * paging_info.contents_num; i < paging_info.current_page * (paging_info.contents_num) + paging_info.contents_num ; i++) { %>
-                <% val = idol_story_list[i] %>
-                    <% if(val == undefined) { %>
-                        <% continue; %>
-                            <% } %>
-                                <div class="area-frame_common _hd_blue _bd_black m-Btm10">
-                                    <div class="area-frame_wrap">
-                                        <h3 class="area-frame_header">
-                                            <div class="area-frame_title" style="font-size:14px;">
-                                                <%- val.story_title %>
-                                            </div>
-                                        </h3>
-                                        <div style="width:280px; margin:0 auto; padding:10px 0 0; overflow:hidden;">
-                                            <ul class="displayBox t-Cnt">
-                                                <% Object.keys(val.icon).forEach(function (key2) { %>
-                                                    <% total = Object.keys(val.icon).length; %>
-                                                        <% val2 = val.icon[key2] %>
-                                                            <% if (+val.open_flag[key2]) { %>
-                                                                <li style="<% if (total == 2) { %>width:50%;<% } else if(total == 3) { %> width:33%; <% } else { %>margin:0 5px;<% } %>">
-                                                                    <form method="get" action="<%- val.flash_path[key2].replace('__hash_card_id__', idol_detail.data.hash_card_id) %>" style="height:90px; margin-bottom: 0px;">
-                                                                        <input type="image" src="<%- val2 %>" height="75" class="jsOnDesignBtn"><br>
-                                                                        <% if (+val.voice_enable[key2]) { %>
-                                                                            <input class="movie_name jsOnDesignBtn" type="image" src="<%- val.movie_name_voice[key2] %>" width="77" style="width:77px;position:relative;top:-15px;"><br>
-                                                                            <% } else { %>
-                                                                                <input type="image" src="<%- val.movie_name[key2] %>" width="77" style="width:77px;position:relative;top:-15px;"><br>
-                                                                                <% } %>
-                                                                                    <% if (val.story_id > 0 && +val.voice_enable[key2]) { %><input type="hidden" name="voice" value="0">
-                                                                                        <% } %>
-                                                                    </form>
-                                                                    <% if (+val.voice_enable[key2]) { %>
-                                                                        <% if (!val.voice_attention || !+val.voice_attention[key2]) { %>
-                                                                            <a href='<%- val.voice_url[key2].replace(' __hash_card_id__ ', idol_detail.data.hash_card_id) %>' class="jsOnDesignBtn">
-                                                                                <div style="text-align:center; height:45px; margin:10px 0 5px;">
-                                                                                    <img src="../../../12008305/image_sp/ui/episode/epi_button_voicepage.jpg" width="84"><br>
-                                                                                </div>
-                                                                            </a>
-                                                                            <% } %>
-                                                                                <% } %>
-                                                                </li>
-                                                                <% } else { %>
-                                                                    <li style="<% if (total == 2) { %> width:50%; <% } else if (total == 3) { %> width:33%;<% } else { %>margin:0 5px;<% } %>">
-                                                                        <div style="height:90px;">
-                                                                            <img src="<%- val2 %>" height="75"><br>
-                                                                            <% if (+val.voice_enable[key2]) { %>
-                                                                                <input class="movie_name" type="image" src="<%- val.movie_name_voice[key2] %>" width="77" style="width:77px;position:relative;top:-15px;"><br>
-                                                                                <% } else { %>
-                                                                                    <input type="image" src="<%- val.movie_name[key2] %>" width="77" style="width:77px;position:relative;top:-15px;"><br>
-                                                                                    <% } %>
-                                                                        </div>
-                                                                        <% if (+val.voice_enable[key2]) { %>
-                                                                            <% if (!val.voice_attention || !+val.voice_attention[key2]) { %>
-                                                                                <div style="text-align:center; height:45px; margin:10px 0 5px;">
-                                                                                    <img src="http://sp.pf-img-a.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fimage_sp%2Fui%2Fepisode%2Fepi_button_voicepage_gray.jpg%3Fv%3D20170809174629" width="84"><br>
-                                                                                </div>
-                                                                                <% } %>
-                                                                                    <% } %>
-                                                                    </li>
-                                                                    <% } %>
-                                                                        <% last = key2; %>
-                                                                            <% }); %>
-                                            </ul>
-                                            <% if (!ios_app_flg || !apple_review) { %>
-                                            <% if (val.story_id > 0 && +val.voice_enable[last]) { %>
-                                            <div class="checkForm ep_off" style="margin-top:0;margin-bottom:0">
-                                            에피소드에서 보이스를 재생한다
-                                            </div>
-                                                    <% } %>
-                                                        <% } %>
-                                        </div>
-                                        <div class="area-frame_bg_image"></div>
-                                    </div>
-                                </div>
-                                <% } %>
-                                    <% if (paging_info.max_page_num > 0) { %>
-                                        <div class="pager_area" style="height:auto;">
-                                            <div class="pager_panel_area">
-                                                <% if (paging_info.current_page != 0) { %>
-                                                    <input type="submit" class="btn_pager_first">
-                                                    <% } else { %>
-                                                        <div class="btn_pager_first _disabled"></div>
-                                                        <% } %>
-                                                            <% if (paging_info.current_page > 0) { %>
-                                                                <input type="submit" class="btn_pager_back">
-                                                                <% } else { %>
-                                                                    <div class="btn_pager_back _disabled"></div>
-                                                                    <% } %>
-                                                                        <% if (paging_info.current_page != paging_info.max_page_num) { %>
-                                                                            <input type="submit" class="btn_pager_next">
-                                                                            <% } else { %>
-                                                                                <div class="btn_pager_next _disabled"></div>
-                                                                                <% } %>
-                                                                                    <% if (paging_info.current_page != paging_info.max_page_num) { %>
-                                                                                        <input type="submit" class="btn_pager_last">
-                                                                                        <% } else { %>
-                                                                                            <div class="btn_pager_last _disabled"></div>
-                                                                                            <% } %>
-                                                                                                <%- paging_info.current_page+1 %> /
-                                                                                                    <%- paging_info.max_page_num+1 %>
-                                            </div>
-                                        </div>
-                                        <% } %>
-        </script>
+<% val = idol_story_list[i] %>
+<% if(val == undefined) { %>
+<% continue; %>
+<% } %>
+<div class="area-frame_common _hd_blue _bd_black m-Btm10">
+    <div class="area-frame_wrap">
+        <h3 class="area-frame_header">
+            <div class="area-frame_title" style="font-size:14px;"><%- val.story_title %></div>
+        </h3>
+<div style="width:280px; margin:0 auto; padding:10px 0 0; overflow:hidden;">
+<ul class="displayBox t-Cnt">
+<% Object.keys(val.icon).forEach(function (key2) { %>
+<% total = Object.keys(val.icon).length; %>
+<% val2 = val.icon[key2] %>
+<% if (+val.open_flag[key2]) { %>
+<li style="<% if (total == 2) { %>width:50%;<% } else if(total == 3) { %> width:33%; <% } else { %>margin:0 5px;<% } %>">
+<form method="get" action="<%- val.flash_path[key2].replace('__hash_card_id__', idol_detail.data.hash_card_id) %>" style="height:90px;">
+<input type="image" src="<%- val2 %>" height="75" class="jsOnDesignBtn"><br>
+<% if (+val.voice_enable[key2]) { %>
+<input class="movie_name jsOnDesignBtn" type="image" src="<%- val.movie_name_voice[key2] %>" width="77" style="width:77px;position:relative;top:-15px;"><br>
+<% } else { %>
+<input type="image" src="<%- val.movie_name[key2] %>" width="77" style="width:77px;position:relative;top:-15px;"><br>
+<% } %>
+<% if (val.story_id > 0 && +val.voice_enable[key2]) { %><input type="hidden" name="voice" value="0"><% } %>
+</form>
+<% if (+val.voice_enable[key2]) { %>
+<% if (!val.voice_attention || !+val.voice_attention[key2]) { %>
+<a href='<%- val.voice_url[key2].replace('__hash_card_id__', idol_detail.data.hash_card_id) %>' class="jsOnDesignBtn">
+<div style="text-align:center; height:45px; margin:10px 0 5px;">
+<img src="http://sp.pf-img-a.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fimage_sp%2Fui%2Fepisode%2Fepi_button_voicepage.jpg%3Fv%3D20101001000000" width="84"><br>
+</div>
+</a>
+<% } %>
+<% } %>
+</li>
+<% } else { %>
+<li style="<% if (total == 2) { %> width:50%; <% } else if (total == 3) { %> width:33%;<% } else { %>margin:0 5px;<% } %>">
+<div style="height:90px;">
+<img src="<%- val2 %>" height="75"><br>
+<% if (+val.voice_enable[key2]) { %>
+<input class="movie_name" type="image" src="<%- val.movie_name_voice[key2] %>" width="77" style="width:77px;position:relative;top:-15px;"><br>
+<% } else { %>
+<input type="image" src="<%- val.movie_name[key2] %>" width="77" style="width:77px;position:relative;top:-15px;"><br>
+<% } %>
+</div>
+<% if (+val.voice_enable[key2]) { %>
+<% if (!val.voice_attention || !+val.voice_attention[key2]) { %>
+<div style="text-align:center; height:45px; margin:10px 0 5px;">
+<img src="http://sp.pf-img-a.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fimage_sp%2Fui%2Fepisode%2Fepi_button_voicepage_gray.jpg%3Fv%3D20101001000000" width="84"><br>
+</div>
+<% } %>
+<% } %>
+</li>
+<% } %>
+<% last = key2; %>
+<% }); %>
+</ul>
+<% if (!ios_app_flg || !apple_review) { %>
+<% if (val.story_id > 0 && +val.voice_enable[last]) { %>
+<div class="checkForm ep_off" style="margin-top:0;margin-bottom:0">
+에피소드에서 보이스를 재생한다
+</div>
+<% } %>
+<% } %>
+</div>
+        <div class="area-frame_bg_image"></div>
+    </div>
+</div>
+<% } %>
+<% if (paging_info.max_page_num > 0) { %>
+<div class="pager_area" style="height:auto;">
+<div class="pager_panel_area">
+<% if (paging_info.current_page != 0) { %>
+<input type="submit" class="btn_pager_first">
+<% } else { %>
+<div class="btn_pager_first _disabled"></div>
+<% } %>
+<% if (paging_info.current_page > 0) { %>
+<input type="submit" class="btn_pager_back">
+<% } else { %>
+<div class="btn_pager_back _disabled"></div>
+<% } %>
+<% if (paging_info.current_page != paging_info.max_page_num) { %>
+<input type="submit" class="btn_pager_next">
+<% } else { %>
+<div class="btn_pager_next _disabled"></div>
+<% } %>
+<% if (paging_info.current_page != paging_info.max_page_num) { %>
+<input type="submit" class="btn_pager_last">
+<% } else { %>
+<div class="btn_pager_last _disabled"></div>
+<% } %>
+<%- paging_info.current_page+1 %> / <%- paging_info.max_page_num+1 %>
+</div>
+</div>
+<% } %>
+</script>
         <script type="text/template" id="parameter-template">
             <section class="idolStatus deck m-Btm10">
-                <div class="data_list">
-                    <div class="wrap">
-                        <div class="title cost"></div>
-                        <div class="pr" style="width: 42px;">
-                            <%- data.cost %>
-                        </div>
-                    </div>
-                    <div class="wrap" style="margin-left:4px;">
-                        <div class="title att"></div>
-                        <div class="pr" style="width: 42px;">
-                            <%- data.default_attack %>
-                        </div>
-                    </div>
-                    <div class="wrap" style="margin-left:4px;">
-                        <div class="title def"></div>
-                        <div class="pr" style="width: 42px;">
-                            <%- data.default_defense %>
-                        </div>
-                    </div>
-                </div>
-                <% if (data.skill_name) { %>
-                    <div class="data_list line">
-                        <div class="wrap">
-                            <div class="title skl"></div>
-                            <div class="pr">
-                                <%- data.skill_name %>
-                            </div>
-                        </div>
-                    </div>
-                    <%if (!data.grow_idol_flag) { %>
-                        <div class="data_list line">
-                            <div class="wrap">
-                                <div class="title skl_ef"></div>
-                                <div class="pr">
-                                    <%- data.skill_effect %>
-                                </div>
-                            </div>
-                        </div>
-                        <%if ( ! $.isEmptyObject(data.skill_effect_2)) { %>
-                          <div class="data_list line">
-                          <div class="wrap">
-                          <div class="title skl_ef"></div><div class="pr"><%- data.skill_effect_2 %></div>
-                          </div>
-                          </div>
-                          <% } %>
-                        <% } %>
-                            <% } %>
-            </section>
-            <% if(trade_prohibition.is_trade_limit) { %>
-                <div class="t-Cnt red <% if(is_exist_archive) { %>m-Btm8<% } %>">
-                    이 아이돌은 트레이드, 프리트레이드, 선물을 할 수 없습니다.
-                </div>
-                <% } %>
-                    <div class="area-btn-common _base-width">
-                        <% if(!trade_prohibition.is_trade_limit) { %>
-                            <a href='<%- url_trade.replace("__hash_card_id__", data.hash_card_id) %>' class="btn_normal_line_2 <% if(!is_exist_archive) { %>m-Cnt<% } %>" style="font-size:12px">프리트레이드 검색으로</a>
-                            <% } %>
-                                <% if(is_exist_archive) { %>
-                                    <a href='<%- url_album.replace("__hash_card_id__", data.hash_card_id) %>' class="btn_normal_line_2 <% if(trade_prohibition.is_trade_limit) { %>m-Cnt<% } %>">앨범으로</a>
-                                    <% } %>
-                    </div>
-                    <% if (event) { %>
-                        <h3 class="title_hanyo m-Top8 m-Btm8">
-                            <div>등장 이벤트</div>
-                        </h3>
-                        <% Object.keys(event).forEach(function (key) { %>
-                            <div class="t-Cnt m-Btm5">
-                                <% if (event[key].event_name.indexOf("<br />") != -1) { %>
-                                    <%- event[key].event_name.slice(0,event[key].event_name.indexOf("<br />")) %><br>
-                                        <%- event[key].event_name.slice(event[key].event_name.indexOf("<br />")+6) %>
-                                            <% } else if (key == 1908) { %>
-                                                <span style="font-size:11px;"><%- event[key].event_name %>(リメイク版)</span>
-                                                <% } else { %>
-                                                    <%- event[key].event_name %>
-                                                        <% } %>
-                            </div>
-                            <div class="area-btn-common _base-width m-Btm8">
-                                <a href='<%- url_event_memory.replace("__event_id__", event[key].event_id).replace("__category_id__", event[key].category_id) %>' class="btn_normal_line_2 _line_2">이벤트 메모리<br>를 본다</a>
-                                <a href='<%- url_other_event.replace("__category_id__", event[key].category_id).replace("__event_id__", event[key].event_id) %>' class="btn_normal_line_2 _line_2">다른 이벤트 등장<br>아이돌을 검색한다</a>
-                            </div>
-                            <% }); %>
-                                <% } %>
-        </script>
+<div class="data_list">
+<div class="wrap">
+<div class="title cost"></div><div class="pr" style="width: 42px;"><%- data.cost %></div>
+</div>
+<div class="wrap" style="margin-left:4px;">
+<div class="title att"></div><div class="pr" style="width: 42px;"><%- data.default_attack %></div>
+</div>
+<div class="wrap" style="margin-left:4px;">
+<div class="title def"></div><div class="pr" style="width: 42px;"><%- data.default_defense %></div>
+</div>
+</div>
+<% if (data.skill_name) { %>
+<div class="data_list line">
+<div class="wrap">
+<div class="title skl"></div><div class="pr"><%- data.skill_name %></div>
+</div>
+</div>
+<%if (!data.grow_idol_flag) { %>
+<div class="data_list line">
+<div class="wrap">
+<div class="title skl_ef"></div><div class="pr"><%- data.skill_effect %></div>
+</div>
+</div>
+<%if ( ! $.isEmptyObject(data.skill_effect_2)) { %>
+<div class="data_list line">
+<div class="wrap">
+<div class="title skl_ef"></div><div class="pr"><%- data.skill_effect_2 %></div>
+</div>
+</div>
+<% } %>
+<% } %>
+<% } %>
+</section>
+<% if(trade_prohibition.is_trade_limit) { %>
+<div class="t-Cnt red <% if(is_exist_archive) { %>m-Btm8<% } %>">
+이 아이돌은 트레이드, 프리 트레이드, 선물이 불가능합니다.
+</div>
+<% } %>
+<div class="area-btn-common _base-width">
+<% if(!trade_prohibition.is_trade_limit) { %>
+<a href='<%- url_trade.replace("__hash_card_id__", data.hash_card_id) %>' class="btn_normal_line_2 <% if(!is_exist_archive) { %>m-Cnt<% } %>" style="font-size:12px">프리 트레이드 검색</a>
+<% } %>
+<% if(is_exist_archive) { %>
+<a href='<%- url_album.replace("__hash_card_id__", data.hash_card_id) %>' class="btn_normal_line_2 <% if(trade_prohibition.is_trade_limit) { %>m-Cnt<% } %>">앨범</a>
+<% } %>
+</div>
+<% if (event) { %>
+<h3 class="title_hanyo m-Top8 m-Btm8">
+<div>등장 이벤트</div>
+</h3>
+<% Object.keys(event).forEach(function (key) { %>
+<div class="t-Cnt m-Btm5">
+<% if (event[key].event_name.indexOf("<br />") != -1) { %>
+<%- event[key].event_name.slice(0,event[key].event_name.indexOf("<br />")) %><br>
+<%- event[key].event_name.slice(event[key].event_name.indexOf("<br />")+6) %>
+<% } else if (key == 1908) { %>
+<span style="font-size:11px;"><%- event[key].event_name %>(리메이크판)</span>
+<% } else { %>
+<%- event[key].event_name %>
+<% } %>
+</div>
+<div class="area-btn-common _base-width m-Btm8">
+<a href='<%- url_event_memory.replace("__event_id__", event[key].event_id).replace("__category_id__", event[key].category_id) %>' class="btn_normal_line_2 _line_2">이벤트 메모리<br>를 보기</a>
+<a href='<%- url_other_event.replace("__category_id__", event[key].category_id).replace("__event_id__", event[key].event_id) %>' class="btn_normal_line_2 _line_2">다른 이벤트 등장<br>아이돌을 검색하기</a>
+</div>
+<% }); %>
+<% } %>
+</script>
         <script type="text/template" id="popup-expansion-template">
             <div class="js_card_rotate" style="position:relative;z-index:1;margin-bottom:12px;height:380px;">
-                <div class="js_current rotate_img" <% if(idol_image_mask_l_p || idol_image_mask_l) { %>twinkle="1"
-                    <% } %> style="width:100%">
-                        <img id="expansion_idol_image" class="js_replace_premium " src='<%- idol_image %>' style="width:100%;" />
-                </div>
-                <% if(idol_image_nosign) { %>
-                    <img id="expansion_idol_image_nosign" class="rotate_img" src='<%- idol_image_nosign %>' style="width:100%;" />
-                    <% } %>
-                        <% if(idol_image_noframe) { %>
-                            <img id="expansion_idol_image_noframe" class="rotate_img" src='<%- idol_image_noframe %>' style="width:100%;" />
-                            <% } %>
-                                <div class="mask01 cardFrame01">
-                                    <div class="mask02 cardFrame02"></div>
-                                </div>
-            </div>
-        </script>
+    <div class="js_current rotate_img" <% if(idol_image_mask_l_p || idol_image_mask_l) { %>twinkle="1"<% } %> style="width:100%">
+    <img id="expansion_idol_image" class="js_replace_premium " src='<%- idol_image %>' style="width:100%;" />
+    </div>
+    <% if(idol_image_nosign) { %>
+    <img id="expansion_idol_image_nosign" class="rotate_img" src='<%- idol_image_nosign %>' style="width:100%;" />
+    <% } %>
+       <% if(idol_image_noframe) { %>
+    <img id="expansion_idol_image_noframe" class="rotate_img" src='<%- idol_image_noframe %>' style="width:100%;" />
+    <% } %>
+        <div class="mask01 cardFrame01">
+            <div class="mask02 cardFrame02"></div>
+        </div>
+    </div>
+</script>
         <style type='text/css'>
             .rotate_appear {
                 -webkit-animation-name: anime1b;
@@ -780,44 +685,53 @@ kg
                 -webkit-animation-timing-function: ease-out;
                 -webkit-animation-fill-mode: forwards;
             }
+
             .rotate_disappear {
                 -webkit-animation-name: anime1;
                 -webkit-animation-duration: 200ms;
                 -webkit-animation-timing-function: ease-out;
                 -webkit-animation-fill-mode: forwards;
             }
+
             @-webkit-keyframes anime1 {
                 from {
                     -webkit-transform: scale(1, 1);
                     transform: scale(1, 1);
                 }
+
                 50% {
                     -webkit-transform: scale(0.5, 1);
                     transform: scale(0.5, 1);
                 }
+
                 to {
                     -webkit-transform: scale(0, 1);
                     transform: scale(0, 1);
                 }
             }
+
             @-webkit-keyframes anime1b {
                 from {
                     -webkit-transform: scale(0, 1);
                     transform: scale(0, 1);
                 }
+
                 50% {
                     -webkit-transform: scale(0.5, 1);
                     transform: scale(0.5, 1);
                 }
+
                 to {
                     -webkit-transform: scale(1, 1);
                     transform: scale(1, 1);
                 }
             }
+
             .card_rotate {
                 -webkit-user-select: none;
                 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             }
+
             .card_img {
                 position: absolute;
             }
@@ -827,16 +741,20 @@ kg
                 width: 320px;
                 height: 400px;
             }
+
             .cardSize_l .card_img {
                 position: absolute;
             }
+
             .mask01 {
                 -webkit-mask-size: 304px 380px;
             }
+
             .mask02 {
                 -webkit-mask-size: 304px 380px;
                 -webkit-transition: background-position 0.1s linear;
             }
+
             .cardFrame01 {
                 width: 304px;
                 height: 380px;
@@ -845,6 +763,7 @@ kg
                 top: 0;
                 background-size: 304px 380px;
             }
+
             .cardFrame02 {
                 width: 304px;
                 height: 380px;
@@ -3415,7 +3334,7 @@ kg
                         "5": "1"
                     },
                     "flash_path": {
-                        "2": "https://hayasakakr.github.io/hayasakamirei/episode/ucyuu/1.html",
+                        "2": "https://hayasakakr.github.io/hayasakamirei/movie/ucyuu/1/",
                         "5": "episode/ucyuu/1.html"
                     },
                     "voice_url": {
@@ -3698,7 +3617,7 @@ kg
                 window.idol = idol;
             })();
             var birthday_flag = false;
-            var select_card_index = "0";
+            var select_card_index = "firstIndex";
             var selected_num = null;
             var url_trade = 'http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fauction%2Fsearch_top%2F0%2F__hash_card_id__%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D440335599';
             var url_album = 'http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Farchive%2Fview%2F__hash_card_id__%2F0%2F0%2F0%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D720740768';
@@ -3706,7 +3625,7 @@ kg
             var url_other_event = 'http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fidol_gallery%2Findex%2F0%2F0%2F2%2F0%3Fis_search%3D1%26event_category%3D__category_id__%26event_id%3D__event_id__%26l_frm%3DIdol_gallery_idol_detail_1%26rnd%3D894921653';
             var url_cartoon = 'http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fcartoon%2Fsearch%3F__idol_search_param__%26l_frm%3DIdol_gallery_idol_detail_1%26rnd%3D254315019';
             var url_comment_5th_redirect = "idol_gallery/idol_detail/__hash_card_id__";
-            var slider_pos = 0;
+            var slider_pos = firstSlide;
             var select_tab = 0;
             var comments_info = {
                 "comment": {
@@ -3814,7 +3733,7 @@ kg
             <img src="http://sp.pf-img-a.mbga.jp/12008305?url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fimage_sp%2Fui%2Fline_hoshi.jpg" width="100%">
         </div>
         <a id="search_cartoon" href='#' class="btn_normal_line_2 m-Cnt m-Btm12">극장에서 검색</a>
-        <a href='http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fidol_gallery%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D867880833'>
+        <a href='https://idolma.ster.world/cinde-gekijou-browser/?include-idol=%EB%AF%B8%EB%A0%88%EC%9D%B4'>
             <div class="backLink">아이돌 갤러리 TOP</div>
         </a>
         <footer>
@@ -3824,22 +3743,6 @@ kg
             <div class="t-Cnt">제작: 하야사카 (グランシア）도움: Neo</div>
         </footer>
     </div>
-    <script>
-        window._tarminal = {
-            'native_app_flg': false,
-            'android_app_flg': false,
-            'ios_app_flg': false,
-            'shell_app_flg': false
-        };
-    </script>
-    <script>
-        window._tarminal = {
-            'native_app_flg': false,
-            'android_app_flg': false,
-            'ios_app_flg': false,
-            'shell_app_flg': false
-        };
-    </script>
     <div id="mbga-pf-footer">
         <div class="mbga-pf-footer-container odd-lines mbga-pf-footer-white">
             <ul>
@@ -3849,30 +3752,6 @@ kg
                             <span class="mbga-pf-footer-caption">公式サークル</span>
                         </a>
                     </div>
-                </li>
-            </ul>
-        </div>
-        <div id="mbga-pf-footer-navbar">
-            <ul class="mbga-pf-box-h">
-                <li id="mbga-pf-footer-navbar-icon-grid" class="mbga-pf-footer-li">
-                    <a class="mbga-pf-footer-a mbga-pf-footer-home-w" href="http://sp.mbga.jp/?_from=globalfooter">
-                        <span class="mbga-pf-footer-txt">ホーム</span>
-                    </a>
-                </li>
-                <li id="mbga-pf-footer-navbar-icon-mypage" class="mbga-pf-footer-li">
-                    <a class="mbga-pf-footer-a mbga-pf-footer-mypage-w" href="http://sp.mbga.jp/_my0?_from=globalfooter">
-                        <span class="mbga-pf-footer-txt">マイページ</span>
-                    </a>
-                </li>
-                <li id="mbga-pf-footer-navbar-icon-mygame" class="mbga-pf-footer-li">
-                    <a class="mbga-pf-footer-a mbga-pf-footer-mygame-w" href="http://sp.mbga.jp/_game_my_top?_from=globalfooter">
-                        <span class="mbga-pf-footer-txt">マイゲーム</span>
-                    </a>
-                </li>
-                <li id="mbga-pf-footer-navbar-icon-notification" class="mbga-pf-footer-li">
-                    <a class="mbga-pf-footer-a mbga-pf-footer-game-w" href="http://sp.mbga.jp/_game_top?_from=globalfooter">
-                        <span class="mbga-pf-footer-txt">ゲーム</span>
-                    </a>
                 </li>
             </ul>
         </div>
