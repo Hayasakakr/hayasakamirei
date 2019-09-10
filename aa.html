@@ -36,53 +36,7 @@
         }
     </script>
     <script src="js/Fjquery-2.2.2.min.js"></script>
-    <script>
-        (function() {
-            window.viewer_id = 158671539;
-            var _url = "http://sp.pf.mbga.jp/12008305/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fgame_error%2Freport_js_error%3Fl_frm%3DIdol_gallery_idol_detail_1%26rnd%3D197298837";
-            var _path = location.href;
-            var _spec_obj;
-            var _spec = 'none';
-            var version = 1;
-            // access方法検出
-            _spec_obj = {
-                'isNative': false,
-                'isAndApp': false,
-                'isShellApp': false,
-                'isIosApp': false,
-                'isChromeApp': false
-            };
-            if (_spec.isAndApp) {
-                _spec = 'andapp'
-            } else if (_spec.isIosApp) {
-                _spec = 'iosApp';
-            } else if (_spec.isShellApp) {
-                _spec = 'shellapp';
-            } else {
-                _spec = 'browser?';
-            }
-            var _ua = window.navigator.userAgent.toLowerCase();
-            window.onerror = function(msg, file, line, col, error) {
-                $.ajax({
-                    url: _url,
-                    type: 'post',
-                    data: {
-                        'ua': _ua,
-                        'viewer_id': window.viewer_id,
-                        'path': _path,
-                        'line': line,
-                        'column': col,
-                        'error': error,
-                        'spec': _spec,
-                        'spec_obj': _spec_obj,
-                        'version': version
-                    }
-                })
-            };
-        })();
-    </script>
     <script src="js/Funderscore-min.js"></script>
-    <script src="js/Frequire.js"></script>
     <script src="js/Frequire.js"></script>
     <script>
         requirejs.config({
@@ -119,6 +73,35 @@
 </head>
 
 <body id="idol_gallery" class="idol_detail">
+  <script type="text/javascript"> // 파라미터 가져오기 , 프로듀서 이름 설정
+      function getParameterByName(name) {
+          name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+          var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+              results = regex.exec(location.search);
+              return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+      var producer = getParameterByName('pro') + " ";
+      var firstIndex = getParameterByName('index') + "";
+      var firstSlide = getParameterByName('slide') + "";
+      if(producer == " ")
+      {
+        producer = "○○○"
+      }
+      if(firstIndex == "")
+      {
+        firstIndex = "0"
+      }
+      if(firstIndex == "")
+      {
+        firstIndex = "0"
+      }
+	  
+	  
+	  
+	  
+	  
+  </script>
+ 
     <div id="top" class="page_container jsOnBtn">
         <nav class="area_menu_header">
             <div class="area_menu_header_6btn">
@@ -3408,7 +3391,7 @@ kg
                         "5": "1"
                     },
                     "flash_path": {
-                        "2": "https://hayasakakr.github.io/hayasakamirei/movie/ucyuu/1/",
+                        "2": "https://hayasakakr.github.io/hayasakamirei/episode/ucyuu/1.html",
                         "5": "episode/ucyuu/1.html"
                     },
                     "voice_url": {
